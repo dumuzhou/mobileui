@@ -1,0 +1,131 @@
+import { eventHandler, createTaroEvent, convertNumber2VP, getComponentEventCallback, AREA_CHANGE_EVENT_NAME, VISIBLE_CHANGE_EVENT_NAME } from '../runtime'
+import { createLazyChildren } from './render'
+import commonStyleModify from './style'
+import { BUTTON_THEME_COLOR } from './utils/constant/style'
+import { TOUCH_EVENT_MAP } from './utils/constant/event'
+import { shouldBindEvent, getNodeThresholds } from './utils/helper'
+
+import type { TaroAny, TaroEvent, TaroButtonElement, TaroStyleType } from '../runtime'
+
+@Extend(Button)
+function themeStyles(style: TaroStyleType) {
+  .fontColor(style.color)
+  .opacity(style.opacity)
+  .borderColor(style.borderColor)
+  .borderWidth(style.borderWidth)
+  .borderRadius(style.borderRadius)
+  .backgroundColor(style.backgroundColor)
+}
+
+export function getButtonColor (node: TaroButtonElement, color: ResourceColor) {
+  const _attrs = node._attrs
+  const isDisabled: boolean = _attrs.disabled || false
+  const isPlain: boolean = _attrs.plain || false
+  const type: string = _attrs.type || 'default'
+
+  if (isDisabled && isPlain) {
+    return Color.Black
+  }
+
+  if (isPlain) {
+    return BUTTON_THEME_COLOR.get(type).plainText
+  }
+
+  return color
+}
+
+function getThemeAttributes (node: TaroButtonElement): TaroStyleType {
+  const hmStyle = node.hmStyle
+  const _attrs = node._attrs
+  const isPlain: boolean = _attrs.plain || false
+  const isDisabled: boolean = _attrs.disabled || false
+  const type: string = _attrs.type || 'default'
+
+  return {
+    borderColor: {
+      top: hmStyle.borderTopColor || getButtonColor(node, BUTTON_THEME_COLOR.get(type).background),
+      right: hmStyle.borderRightColor || getButtonColor(node, BUTTON_THEME_COLOR.get(type).background),
+      bottom: hmStyle.borderBottomColor || getButtonColor(node, BUTTON_THEME_COLOR.get(type).background),
+      left: hmStyle.borderLeftColor || getButtonColor(node, BUTTON_THEME_COLOR.get(type).background)
+    },
+    borderWidth: {
+      top: hmStyle.borderTopWidth || 1,
+      right: hmStyle.borderRightWidth || 1,
+      bottom: hmStyle.borderBottomWidth || 1,
+      left: hmStyle.borderLeftWidth || 1
+    },
+    borderRadius: {
+      topLeft: hmStyle.borderTopLeftRadius || convertNumber2VP(10),
+      topRight: hmStyle.borderTopRightRadius || convertNumber2VP(10),
+      bottomLeft: hmStyle.borderBottomLeftRadius || convertNumber2VP(10),
+      bottomRight: hmStyle.borderBottomRightRadius || convertNumber2VP(10)
+    },
+    opacity: isDisabled ? 0.4 : hmStyle.opacity,
+    backgroundColor: isPlain ? Color.Transparent : (hmStyle.backgroundColor || BUTTON_THEME_COLOR.get(type).background),
+    color: hmStyle.color || getButtonColor(node, BUTTON_THEME_COLOR.get(type).text),
+  }
+}
+
+function getButtonWidth (node: TaroButtonElement) {
+  const isMini = node._attrs.size === 'mini'
+
+  return isMini ? convertNumber2VP(120) : '100%'
+}
+
+function getButtonHeight (node: TaroButtonElement) {
+  const isMini = node._attrs.size === 'mini'
+
+  return isMini ? convertNumber2VP(60) : convertNumber2VP(92)
+}
+
+function getButtonMinWidth (node: TaroButtonElement): string | number | undefined {
+  if (node.hmStyle.width) {
+    return undefined
+  }
+
+  return getButtonWidth(node)
+}
+
+function getButtonMinHeight (node: TaroButtonElement): string | number | undefined {
+  if (node.hmStyle.height) {
+    return undefined
+  }
+
+  return getButtonHeight(node)
+}
+
+@Builder
+export default function TaroButton (node: TaroButtonElement) {
+  Button({ stateEffect: !node._attrs.disabled }) {
+    Row() {
+      if (node._attrs.loading) {
+        LoadingProgress()
+        .width(20).height(20)
+        .color(getThemeAttributes(node).color)
+      }
+      createLazyChildren(node)
+    }
+  }
+  .themeStyles(getThemeAttributes(node))
+  .attributeModifier(commonStyleModify.setNode(node))
+  .constraintSize({
+    minWidth: node.hmStyle?.minWidth || getButtonMinWidth(node),
+    minHeight: node.hmStyle?.minHeight || getButtonMinHeight(node),
+    maxWidth: node.hmStyle?.maxWidth,
+    maxHeight: node.hmStyle?.maxHeight,
+  })
+  .type(ButtonType.Normal)
+  .onClick((e: ClickEvent) => {
+    if (node._attrs.formType && ['submit', 'reset'].includes(node._attrs.formType)) {
+      const eventName = node._attrs.formType + '-btn'
+      const event: TaroEvent = createTaroEvent(eventName, {}, node)
+      eventHandler(event, eventName, node)
+    }
+    eventHandler(e, 'click', node)
+  })
+  .onTouch(shouldBindEvent((e: TouchEvent) => eventHandler(e, TOUCH_EVENT_MAP.get(e.type), node), node, TOUCH_EVENT_MAP.values()))
+  .onAreaChange(getComponentEventCallback(node, AREA_CHANGE_EVENT_NAME, (res: TaroAny) => {
+    node._nodeInfo.areaInfo = res[1]
+  }))
+  .onVisibleAreaChange(getNodeThresholds(node) || [0.0, 1.0], getComponentEventCallback(node, VISIBLE_CHANGE_EVENT_NAME))
+}

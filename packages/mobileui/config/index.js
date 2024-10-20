@@ -1,33 +1,31 @@
-const path = require('path')
-const { version } = require('../package.json')
+const path = require('path');
+const { version } = require('../package.json');
 
 const CIPluginOpt = {
   weapp: {
     appid: process.env.WEAPP_ID || '微信小程序appid',
-    privateKeyPath: "key/private.appid.key"
+    privateKeyPath: 'key/private.appid.key',
   },
   tt: {
-    email: "字节小程序邮箱",
-    password: "字节小程序密码"
+    email: '字节小程序邮箱',
+    password: '字节小程序密码',
   },
   alipay: {
-    appid: "支付宝小程序appId",
-    toolId: "工具id",
-    privateKeyPath: "key/pkcs8-private-pem"
+    appid: '支付宝小程序appId',
+    toolId: '工具id',
+    privateKeyPath: 'key/pkcs8-private-pem',
   },
   swan: {
-    token: "鉴权需要的token令牌"
+    token: '鉴权需要的token令牌',
   },
   version,
-  desc: "修复已知问题"
-}
+  desc: '修复已知问题',
+};
 
-const plugins = process.env.TARO_ENV === 'weapp' ? [
-  [ "@tarojs/plugin-mini-ci", CIPluginOpt ],
-  [ "@tarojs/plugin-html"]
-] : [
-  '@tarojs/plugin-platform-harmony-ets',
-]
+const plugins =
+  process.env.TARO_ENV === 'weapp'
+    ? [['@tarojs/plugin-mini-ci', CIPluginOpt], ['@tarojs/plugin-html']]
+    : ['@tarojs/plugin-platform-harmony-ets'];
 
 const config = {
   projectName: 'taro-demo',
@@ -36,18 +34,15 @@ const config = {
   deviceRatio: {
     640: 2.34 / 2,
     750: 1,
-    828: 1.81 / 2
+    828: 1.81 / 2,
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
   plugins,
-  defineConstants: {
-  },
+  defineConstants: {},
   copy: {
-    patterns: [
-    ],
-    options: {
-    }
+    patterns: [],
+    options: {},
   },
   framework: 'react',
   compiler: 'webpack5',
@@ -55,24 +50,22 @@ const config = {
     postcss: {
       pxtransform: {
         enable: true,
-        config: {
-
-        }
+        config: {},
       },
       url: {
         enable: true,
         config: {
-          limit: 1024 // 设定转换尺寸上限
-        }
+          limit: 1024, // 设定转换尺寸上限
+        },
       },
       cssModules: {
         enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
         config: {
           namingPattern: 'module', // 转换模式，取值为 global/module
-          generateScopedName: '[name]__[local]___[hash:base64:5]'
-        }
-      }
-    }
+          generateScopedName: '[name]__[local]___[hash:base64:5]',
+        },
+      },
+    },
   },
   h5: {
     publicPath: '/taro-playground/',
@@ -80,23 +73,26 @@ const config = {
     postcss: {
       autoprefixer: {
         enable: true,
-        config: {
-        }
+        config: {},
       },
       cssModules: {
         enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
         config: {
           namingPattern: 'module', // 转换模式，取值为 global/module
-          generateScopedName: '[name]__[local]___[hash:base64:5]'
-        }
-      }
-    }
+          generateScopedName: '[name]__[local]___[hash:base64:5]',
+        },
+      },
+    },
   },
   harmony: {
-    compiler: "vite",
-    projectPath: process.env.HARMONY_PROJECT_PATH || 'dist',
-    hapName: "entry",
-    name: "default"
+    // 将编译方式设置为使用 Vite 编译
+    compiler: 'vite',
+    // 【必填】鸿蒙主应用的绝对路径，例如：
+    projectPath: path.resolve(process.cwd(), './harmony'),
+    // 【可选】HAP 的名称，默认为 'entry'
+    hapName: 'entry',
+    // 【可选】modules 的入口名称，默认为 'default'
+    name: 'default',
   },
   rn: {
     appName: 'taroDemo',
@@ -113,26 +109,26 @@ const config = {
       // androidSourcemapSourcesRoot: '',
     },
     sass: {
-      additionalData: '@use "sass:math";'
-    }
+      additionalData: '@use "sass:math";',
+    },
   },
   alias: {
     '@/components': path.resolve(__dirname, '..', 'src/pages/components'),
     '@/utils': path.resolve(__dirname, '..', 'src/pages/utils'),
     '@/assets': path.resolve(__dirname, '..', 'src/assets'),
     '@/platform': path.resolve(__dirname, '..', 'src/platform'),
-  }
-}
+  },
+};
 
 if (process.env.TARO_ENV === 'harmony') {
   config.defineConstants = {
-    'global.HermesInternal': 'false'
-  }
+    'global.HermesInternal': 'false',
+  };
 }
 
 module.exports = function (merge) {
   if (process.env.NODE_ENV === 'development') {
-    return merge({}, config, require('./dev'))
+    return merge({}, config, require('./dev'));
   }
-  return merge({}, config, require('./prod'))
-}
+  return merge({}, config, require('./prod'));
+};
