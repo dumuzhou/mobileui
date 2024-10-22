@@ -121,6 +121,9 @@ importers:
       '@wuba/react-native-echarts':
         specifier: 1.2.5
         version: 1.2.5(zeclefdx4wibaggngoo4rh7nbi)
+      classnames:
+        specifier: ^2.5.1
+        version: 2.5.1
       d3-hierarchy:
         specifier: ^3.1.2
         version: 3.1.2
