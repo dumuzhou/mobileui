@@ -9,7 +9,14 @@
 export default {
   // entryPagePath: 'pages/home/index',
   pages: ['pages/index/index'],
-  subpackages: [],
+  subpackages: [
+    {
+      root: 'demos',
+      //path: "demos",
+      pages: ['space-demo1/index', 'button-demo1/index'],
+      //"independent": true
+    },
+  ],
   window: {
     backgroundColor: '#efefef',
     backgroundTextStyle: 'light',
