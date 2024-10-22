@@ -1,0 +1,44 @@
+@class-prefix-space: ~'amu-space';
+.@{class-prefix-space} {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  &-justify {
+    &-center {
+      justify-content: center;
+    }
+    &-end {
+      justify-content: flex-end;
+    }
+    &-between {
+      justify-content: space-between;
+    }
+    &-evenly {
+      justify-content: space-evenly;
+    }
+    &-around {
+      justify-content: space-around;
+    }
+  }
+  align-items: center;
+  &-vertical {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &-align {
+    &-start {
+      align-items: flex-start;
+    }
+    &-end {
+      align-items: flex-end;
+    }
+    &-stretch {
+      align-items: stretch;
+    }
+  }
+  flex-wrap: nowrap;
+  &-wrap {
+    flex-wrap: wrap;
+  }
+}
