@@ -2,6 +2,7 @@ import { Component } from 'react';
 import Taro from '@tarojs/taro';
 import { View, Text, Image, Input } from '@tarojs/components';
 import './index.scss';
+import menu from './menu';
 
 export default class Index extends Component<any, any> {
   linkingListener: any;
@@ -19,8 +20,21 @@ export default class Index extends Component<any, any> {
 
   render() {
     return (
-      <View className="index">
-        <Text>11{this.state.text}</Text>
+      <View className="m-page">
+        {menu.map((item, index) => {
+          return (
+            <View className="m-menu">
+              <Text>{item.title}</Text>
+              {item.children.map((ite, ind) => {
+                return (
+                  <View className="m-item">
+                    <Text>{ite.title}</Text>
+                  </View>
+                );
+              })}
+            </View>
+          );
+        })}
       </View>
     );
   }
