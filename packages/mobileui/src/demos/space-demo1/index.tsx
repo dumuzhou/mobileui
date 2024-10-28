@@ -50,13 +50,6 @@ const Index = () => {
           </Space>
         </DemoBlock>
 
-        <DemoBlock title="渲染为块级元素">
-          <Space direction="vertical" block>
-            <Button>按钮1</Button>
-            <Button>按钮2</Button>
-            <Button>按钮3</Button>
-          </Space>
-        </DemoBlock>
         <DemoBlock title="主轴对齐方式">
           <Space justify="center">
             <Button>按钮1</Button>

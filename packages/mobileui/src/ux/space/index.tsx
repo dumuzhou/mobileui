@@ -1,25 +1,24 @@
 import classnames from 'classnames';
-import React, { FC } from 'react';
-import { Button as TaroButton, Form, View, Text } from '@tarojs/components';
+import React, { FC, useContext } from 'react';
+import { View } from '@tarojs/components';
 //import { ButtonProps } from "@tarojs/components/types/Button";
-import Taro from '@tarojs/taro';
+import { ThemeContext } from '../theme';
+import { ThemeProps } from '../theme/default';
 //import { AmButtonProps, AmButtonState } from "../../../types/button";
 import './index.less';
 
-const classPrefix = `amu-space`;
+const classPrefix = `mbu-space`;
 export type SpaceProps = {
   //  方向
   direction?: 'horizontal' | 'vertical';
-  // 纵轴
+  // 主轴
   justify?: 'start' | 'center' | 'end' | 'between' | 'evenly' | 'around';
-  // 竖轴
+  // 交叉轴
   align?: 'start' | 'center' | 'end' | 'stretch';
   // 是否换行
   wrap?: boolean;
   // 空隙
   gap?: number;
-  // 是否块级
-  block?: boolean;
   children?: any;
 };
 const defaultProps: SpaceProps = {
@@ -27,22 +26,16 @@ const defaultProps: SpaceProps = {
   justify: 'start',
   align: 'start',
   wrap: false,
-  gap: 8,
-  block: false,
 };
 const Space = function (p: SpaceProps) {
-  const props = { ...defaultProps, ...p };
-  const {
-    children,
-    direction,
-    justify,
-    align,
-    wrap,
-    gap,
-    block,
-    ...restProps
-  } = props;
-  const isX = direction === 'horizontal';
+  const theme: ThemeProps = useContext(ThemeContext);
+  console.log('主题');
+  console.log(theme);
+  const props = { ...defaultProps, ...{ gap: theme.space }, ...p };
+  console.log('props');
+  console.log(props);
+  const { children, direction, justify, align, wrap, gap, ...restProps } =
+    props;
   return (
     <View
       className={classnames(
@@ -56,27 +49,21 @@ const Space = function (p: SpaceProps) {
       )}
       {...restProps}
       style={{
-        marginBottom: gap ? -gap : 0,
+        marginRight: -gap,
+        marginBottom: -gap,
       }}
     >
       {React.Children.map(props.children, (child) => {
         return (
-          child !== null &&
-          child !== undefined && (
+          !!child && (
             <View
               className={classnames(`${classPrefix}-item`, {
                 [`${classPrefix}-item-wrap`]: wrap,
                 [`${classPrefix}-item-vertical`]: direction === 'vertical',
               })}
               style={{
-                marginRight: isX ? gap : 0,
+                marginRight: gap,
                 marginBottom: gap,
-
-                ...(block
-                  ? {
-                      width: '100%',
-                    }
-                  : {}),
               }}
             >
               {child}
