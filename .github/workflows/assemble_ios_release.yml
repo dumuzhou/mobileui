@@ -6,7 +6,7 @@ on:
   push:
     tags: [ v*, r*, i* ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
   workflow_dispatch:
 
