@@ -15,5 +15,5 @@ env:
   SIGNING_CERTIFICATE_PASSWORD: ${{secrets.RELEASE_SIGNING_CERTIFICATE_PASSWORD}} p12证书密码
   PROVISIONING_PROFILE_DATA: ${{secrets.RELEASE_PROVISIONING_PROFILE_DATA}} # pp文件名.mobileprovision 描述文件base64
   APP_STORE_CONNECT_USERNAME: ${{secrets.APP_STORE_CONNECT_USERNAME}} # 上传到苹果store账号
-  APP_STORE_CONNECT_PASSWORD: ${{secrets.APP_STORE_CONNECT_PASSWORD}} # 上传到苹果store密码
+  APP_STORE_CONNECT_PASSWORD: ${{secrets.APP_STORE_CONNECT_PASSWORD}} # 上传到苹果store密码 https://appleid.apple.com/#!&page=signin 登录之后生成app专用密码
 ```
