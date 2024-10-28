@@ -44,13 +44,12 @@ jobs:
         with:
           node-version: 20
           cache: 'pnpm'
-          working-directory: packages/mobileui
+          scope: 'mobileui'
       - run: pnpm install
 
       - name: Cache Pods # 缓存
         uses: actions/cache@v2
         with:
-          working-directory: packages/mobileui
           path: ios/Pods
           key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
           restore-keys: |
