@@ -56,7 +56,7 @@ jobs:
             ${{ runner.os }}-pods-
 
       - name: Install pods # 安装pod依赖
-        run: cd packages/mobileui/ios && pod update --no-repo-update
+        run: cd packages/mobileui/ios && pod update
 
       - name: Import signing certificate # 导入p12证书
         env:
