@@ -25,7 +25,7 @@ export default {
         'slider-demo1/index',
         'badge-demo1/index',
         'skeleton-demo1/index',
-        //'selector-demo1/index',
+        'selector-demo1/index',
       ],
       //"independent": true
     },
