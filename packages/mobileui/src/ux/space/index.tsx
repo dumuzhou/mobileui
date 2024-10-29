@@ -1,13 +1,13 @@
 import classnames from 'classnames';
 import React, { FC, useContext } from 'react';
 import { View } from '@tarojs/components';
-//import { ButtonProps } from "@tarojs/components/types/Button";
 import { ThemeContext } from '../theme';
 import { ThemeProps } from '../theme/default';
-//import { AmButtonProps, AmButtonState } from "../../../types/button";
+import { NativeProps, withNativeProps } from '../utils/native-props';
 import './index.less';
 
 const classPrefix = `mbu-space`;
+
 export type SpaceProps = {
   //  方向
   direction?: 'horizontal' | 'vertical';
@@ -19,24 +19,24 @@ export type SpaceProps = {
   wrap?: boolean;
   // 空隙
   gap?: number;
-  children?: any;
-};
+  children?: React.ReactNode;
+} & NativeProps;
+
 const defaultProps: SpaceProps = {
   direction: 'horizontal',
   justify: 'start',
   align: 'start',
   wrap: false,
 };
-const Space = function (p: SpaceProps) {
+
+const Space = (p: SpaceProps) => {
   const theme: ThemeProps = useContext(ThemeContext);
-  console.log('主题');
-  console.log(theme);
   const props = { ...defaultProps, ...{ gap: theme.space }, ...p };
-  console.log('props');
-  console.log(props);
   const { children, direction, justify, align, wrap, gap, ...restProps } =
     props;
-  return (
+
+  return withNativeProps(
+    props,
     <View
       className={classnames(
         `${classPrefix}`,
@@ -74,4 +74,5 @@ const Space = function (p: SpaceProps) {
     </View>
   );
 };
+
 export default Space;

@@ -1,5 +1,4 @@
-import Taro from '@tarojs/taro';
-import { View, Text, Button } from '@tarojs/components';
+import { View, Button } from '@tarojs/components';
 import './index.less';
 import { AppPage, DemoBlock, Space } from '../../ux';
 
