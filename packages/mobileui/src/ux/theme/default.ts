@@ -58,6 +58,6 @@ const defaultTheme = {
   background: '#F5F5F5',
   white: '#FFFFFF',
   radius: 4,
-  space: 50,
+  space: 8,
 };
 export default defaultTheme;

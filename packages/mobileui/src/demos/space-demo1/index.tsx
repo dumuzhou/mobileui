@@ -7,12 +7,6 @@ const Index = () => {
   return (
     <AppPage>
       <View className="m-demo">
-        <DemoBlock title="栗子">
-          <Text>space demo</Text>
-          <Text>space demo</Text>
-          <Text>space demo</Text>
-        </DemoBlock>
-
         <DemoBlock title="水平方向的间距">
           <Space>
             <Button>按钮1</Button>

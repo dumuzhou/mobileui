@@ -32,7 +32,9 @@ export default class Index extends Component<any, any> {
                     key={ind}
                     onClick={() => {
                       Taro.navigateTo({
-                        url: ite.path,
+                        url: `${ite.path}?title=${encodeURIComponent(
+                          ite.title
+                        )}`,
                       });
                     }}
                   >
