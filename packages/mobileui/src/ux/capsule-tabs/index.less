@@ -1,0 +1,51 @@
+@import '../theme/index.less';
+
+@class-prefix-capsule-tabs: ~'amu-capsule-tabs';
+
+.@{class-prefix-capsule-tabs} {
+  &-wraps {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 100%;
+  &-items {
+    /* prettier-ignore */
+    padding: 0 6Px;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+  }
+  &-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* prettier-ignore */
+    padding: 8Px  20Px;
+    border-radius: 999px;
+    background-color: #f5f5f5;
+    &-crt {
+      background-color: #1677ff;
+    }
+  }
+  &-text {
+    /* prettier-ignore */
+    font-size: 15Px;
+    color: #333;
+    /* prettier-ignore */
+    line-height: 21Px;
+    &-crt {
+      color: #fff;
+    }
+  }
+}
+/* #ifndef rn */
+/* #endif */

@@ -1,0 +1,21 @@
+@import '../theme/index.less';
+
+@class-prefix-grid: ~'amu-grid';
+
+.@{class-prefix-grid} {
+  /* prettier-ignore */
+  &-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  &-item {
+    background-color: red;
+    width: 10px;
+    height: 10px;
+  }
+}
+/* #ifndef rn */
+/* #endif */

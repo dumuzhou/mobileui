@@ -13,7 +13,12 @@ export default {
     {
       root: 'demos',
       //path: "demos",
-      pages: ['space-demo1/index', 'button-demo1/index'],
+      pages: [
+        'space-demo1/index',
+        'button-demo1/index',
+        'grid-demo1/index',
+        'capsule-tabs-demo1/index',
+      ],
       //"independent": true
     },
   ],
