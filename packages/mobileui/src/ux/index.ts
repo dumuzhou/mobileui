@@ -14,5 +14,7 @@ export { default as Slider } from './slider';
 export { default as Badge } from './badge';
 export { default as Skeleton } from './skeleton';
 export { default as Selector } from './selector';
+export { default as Tag } from './tag';
+export { default as Steps } from './steps';
 
 export { default as useSize } from './hooks/useSize';

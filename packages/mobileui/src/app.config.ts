@@ -26,6 +26,8 @@ export default {
         'badge-demo1/index',
         'skeleton-demo1/index',
         'selector-demo1/index',
+        'tag-demo1/index',
+        'steps-demo1/index',
       ],
       //"independent": true
     },
