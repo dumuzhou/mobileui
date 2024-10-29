@@ -1,0 +1,72 @@
+@import '../theme/index.less';
+
+@class-prefix-slider: ~'amu-slider';
+
+.@{class-prefix-slider} {
+  /* prettier-ignore */
+  padding: 5Px 14Px;
+  &-gang {
+    /* prettier-ignore */
+    height: 3Px;
+    background-color: #f5f5f5;
+    /* prettier-ignore */
+    border-radius: 3Px;
+    /* prettier-ignore */
+    margin-top: 8Px;
+    /* prettier-ignore */
+    margin-bottom: 8Px;
+    position: relative;
+    &-point {
+      position: absolute;
+      /* prettier-ignore */
+      left: 50Px;
+      /* prettier-ignore */
+      width: 7Px;
+      /* prettier-ignore */
+      height: 7Px;
+      /* prettier-ignore */
+      border-radius: 7Px;
+      background-color: #f5f5f5;
+      /*transform: translateX(-50%);*/
+    }
+
+    &-start {
+      position: absolute;
+      /* prettier-ignore */
+      width: 7Px;
+      /* prettier-ignore */
+      height: 7Px;
+      /* prettier-ignore */
+      border-radius: 7Px;
+      background-color: red;
+      left: 0;
+      /*transform: translateX(-50%);*/
+    }
+    &-end {
+      position: absolute;
+      /* prettier-ignore */
+      width: 28Px;
+      /* prettier-ignore */
+      height: 28Px;
+      /* prettier-ignore */
+      left: 100Px;
+      /* prettier-ignore */
+      border-radius: 9999Px;
+      background-color: red;
+      /*transform: translateX(-50%);*/
+    }
+  }
+  &-tips {
+    /* prettier-ignore */
+    height: 11Px;
+    /* prettier-ignore */
+    margin-top: 10Px;
+    &-text {
+      color: #333;
+      /* prettier-ignore */
+      font-size: 11Px;
+    }
+  }
+}
+/* #ifndef rn */
+/* #endif */

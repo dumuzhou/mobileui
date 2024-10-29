@@ -9,5 +9,7 @@ export { default as CapsuleTabs } from './capsule-tabs';
 export { default as Divider } from './divider';
 export { default as List } from './list';
 export { default as IndexBar } from './index-bar';
+export { default as Card } from './card';
+export { default as Slider } from './slider';
 
 export { default as useSize } from './hooks/useSize';

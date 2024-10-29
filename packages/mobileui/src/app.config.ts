@@ -21,6 +21,8 @@ export default {
         'divider-demo1/index',
         'list-demo1/index',
         'index-bar-demo1/index',
+        'card-demo1/index',
+        'slider-demo1/index',
       ],
       //"independent": true
     },

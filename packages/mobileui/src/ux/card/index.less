@@ -1,0 +1,70 @@
+@import '../theme/index.less';
+
+@class-prefix-card: ~'amu-card';
+
+.@{class-prefix-card} {
+  background-color: #fff;
+  /* prettier-ignore */
+  border-radius: 8Px;
+  /* prettier-ignore */
+  padding: 0 12Px;
+  &-header {
+    /* prettier-ignore */
+    padding: 12Px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    &-titles {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    &-ico {
+      /* prettier-ignore */
+      width: 15Px;
+      /* prettier-ignore */
+      height: 15Px;
+      background-color: red;
+    }
+    &-right {
+      /* prettier-ignore */
+      width: 15Px;
+      /* prettier-ignore */
+      height: 15Px;
+      background-color: red;
+    }
+  }
+  &-body {
+    /* prettier-ignore */
+    padding: 12Px 0;
+    &-content {
+      box-sizing: border-box;
+      /* prettier-ignore */
+      min-height: 50Px;
+      /* prettier-ignore */
+      padding-bottom: 12Px;
+    }
+  }
+  &-footer {
+    /* prettier-ignore */
+    padding-top: 12Px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  &-title {
+    color: #333;
+    /* prettier-ignore */
+    font-size: 15Px;
+  }
+  &-text {
+    /* prettier-ignore */
+    font-size: 13Px;
+    color: #333;
+  }
+}
+/* #ifndef rn */
+/* #endif */
