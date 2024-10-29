@@ -1,0 +1,52 @@
+@import '../theme/index.less';
+
+@class-prefix-badge: ~'amu-badge';
+.@{class-prefix-badge} {
+  position: relative;
+  &-box {
+    &-ab {
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      /* prettier-ignore */
+      top: -7.5Px;
+      width: 200%;
+    }
+    /* prettier-ignore */
+    height: 15Px;
+    .center();
+    &-dot {
+      /* prettier-ignore */
+      height: 10Px;
+      /* prettier-ignore */
+      top: -5Px;
+    }
+  }
+  &-wrap {
+    /* prettier-ignore */
+    border-radius: 999Px;
+    /* prettier-ignore */
+    height: 15Px;
+    /* prettier-ignore */
+    min-width: 16Px;
+    /* prettier-ignore */
+    padding-left: 4Px;
+    /* prettier-ignore */
+    padding-right: 4Px;
+    .center();
+    &-dot {
+      /* prettier-ignore */
+      height: 10Px;
+      /* prettier-ignore */
+      min-width: 10Px;
+      /* prettier-ignore */
+      width: 10Px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  &-text {
+    /* prettier-ignore */
+    font-size: 9Px;
+  }
+}

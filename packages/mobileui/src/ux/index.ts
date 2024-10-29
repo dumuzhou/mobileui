@@ -11,5 +11,8 @@ export { default as List } from './list';
 export { default as IndexBar } from './index-bar';
 export { default as Card } from './card';
 export { default as Slider } from './slider';
+export { default as Badge } from './badge';
+export { default as Skeleton } from './skeleton';
+export { default as Selector } from './selector';
 
 export { default as useSize } from './hooks/useSize';

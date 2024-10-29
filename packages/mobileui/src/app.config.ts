@@ -23,6 +23,9 @@ export default {
         'index-bar-demo1/index',
         'card-demo1/index',
         'slider-demo1/index',
+        'badge-demo1/index',
+        //'skeleton-demo1/index',
+        //'selector-demo1/index',
       ],
       //"independent": true
     },
