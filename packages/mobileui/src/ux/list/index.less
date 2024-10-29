@@ -1,0 +1,62 @@
+@import '../theme/index.less';
+
+@class-prefix-list: ~'amu-list';
+.@{class-prefix-list} {
+  position: relative;
+  overflow: hidden;
+  &-card {
+    /* prettier-ignore */
+    margin: 12Px;
+  }
+  &-header {
+    /* prettier-ignore */
+    padding-top: 8Px;
+    /* prettier-ignore */
+    padding-bottom: 8Px;
+    /* prettier-ignore */
+    padding-left: 15Px;
+    &-title {
+      /* prettier-ignore */
+      font-size: 15Px;
+      color: #ccc;
+    }
+    &-card {
+      padding-left: 0;
+      /* prettier-ignore */
+      margin-top: -12Px;
+    }
+  }
+  &-body {
+    background-color: #fff;
+    &-card {
+      /* prettier-ignore */
+      border-radius: 8Px;
+    }
+  }
+}
+
+@class-prefix-list-item: ~'amu-list-item';
+.@{class-prefix-list-item} {
+  /* prettier-ignore */
+  padding-left: 15Px;
+  /* prettier-ignore */
+  margin-bottom: -1Px;
+  &-wrap {
+    line-height: 0;
+    position: relative;
+    /* prettier-ignore */
+    padding-top: 12Px;
+    /* prettier-ignore */
+    padding-bottom: 12Px;
+    /* prettier-ignore */
+    padding-right: 12Px;
+    .f456();
+  }
+  &-text {
+    color: #000;
+    /* prettier-ignore */
+    font-size: 17Px;
+    /* prettier-ignore */
+    line-height: 26Px;
+  }
+}

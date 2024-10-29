@@ -19,6 +19,8 @@ export default {
         'grid-demo1/index',
         'capsule-tabs-demo1/index',
         'divider-demo1/index',
+        'list-demo1/index',
+        'index-bar-demo1/index',
       ],
       //"independent": true
     },
