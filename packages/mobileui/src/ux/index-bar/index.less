@@ -1,0 +1,103 @@
+@import '../theme/index.less';
+
+@class-prefix-index-bar: ~'amu-index-bar';
+
+.@{class-prefix-index-bar} {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  &-rights {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* prettier-ignore */
+    padding: 0 12Px;
+    &-item {
+      position: relative;
+      /* prettier-ignore */
+      height: 16Px;
+      /* prettier-ignore */
+      width: 16Px;
+      .center();
+      &-crt {
+        background-color: #1677ff;
+        /* prettier-ignore */
+        border-radius: 16Px;
+      }
+    }
+    &-yuans {
+      position: absolute;
+      /* prettier-ignore */
+      left: -90Px;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    &-yuan {
+      /* prettier-ignore */
+      width: 47Px;
+      /* prettier-ignore */
+      height: 47Px;
+      border-radius: 999px;
+      background-color: #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &-text {
+        /* prettier-ignore */
+        font-size: 25Px;
+        color: #fff;
+      }
+    }
+  }
+  &-text {
+    /* prettier-ignore */
+    font-size: 12Px;
+    /* prettier-ignore */
+    line-height: 1Px;
+    color: #999;
+    &-crt {
+      color: #fff;
+    }
+  }
+  &-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    flex: 1;
+  }
+  &-header {
+    /* prettier-ignore */
+    height: 35Px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    /* prettier-ignore */
+    padding: 0 12Px;
+    background-color: #f5f5f5;
+    &-text {
+      /* prettier-ignore */
+      line-height: 35Px;
+      color: #999;
+      /* prettier-ignore */
+      font-size: 13Px;
+    }
+  }
+}
+/* #ifndef rn */
+/* #endif */
