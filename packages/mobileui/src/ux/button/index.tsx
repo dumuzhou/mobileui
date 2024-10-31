@@ -17,15 +17,13 @@ import buttonStyles from './style';
 //import { AmButtonProps, AmButtonState } from "../../../types/button";
 import './index.less';
 
-const classPrefix = `amu-button`;
+const classPrefix = `mbu-button`;
 
 type NewProps = Pick<
   ButtonPropsNative,
   Exclude<keyof ButtonPropsNative, 'size'>
 >;
 export type ButtonProps = {
-  icon?: ReactNode;
-  loading?: boolean;
   color?: 'default' | 'primary' | 'success' | 'warning' | 'danger';
   disabled?: boolean;
   fill?: 'solid' | 'outline' | 'none';
@@ -33,9 +31,9 @@ export type ButtonProps = {
   size?: 'mini' | 'small' | 'middle' | 'modal' | 'large';
   children?: any;
   textColor?: string;
-} & NewProps;
+} & NewProps &
+  NativeProps;
 const defaultProps: ButtonProps = {
-  loading: false,
   color: 'default',
   disabled: false,
   fill: 'solid',
@@ -62,9 +60,7 @@ const Button = function (p: ButtonProps) {
     fill,
     shape,
     size,
-    loading,
     children,
-    icon,
     ...restProps
   } = props;
   const theme = useContext(ThemeContext);
@@ -89,26 +85,13 @@ const Button = function (p: ButtonProps) {
           props.shape ? `${classPrefix}-shape-${props.shape}` : null,
           props.disabled ? `${classPrefix}-${props.disabled}` : null,
           {
-            [`${classPrefix}-disabled`]: props.disabled || loading,
+            [`${classPrefix}-disabled`]: props.disabled,
           }
         )}
         hoverStyle={{
           opacity: 0.6,
         }}
-        useView={loading || icon}
       >
-        {(loading || !!icon) && (
-          <View
-            className={classnames(
-              `${classPrefix}-ico`,
-
-              props.size && `${classPrefix}-ico-${props.size}`
-            )}
-          >
-            {!!icon && icon}
-          </View>
-        )}
-
         {typeof props.children === 'string' && (
           <Text
             style={textStyle}
@@ -129,7 +112,7 @@ const Button = function (p: ButtonProps) {
           </Text>
         )}
       </Wrap>
-      {(disabled || loading) && (
+      {disabled && (
         <View className={classnames(`${classPrefix}-wrap-disabled`)}></View>
       )}
     </View>

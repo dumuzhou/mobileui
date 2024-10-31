@@ -29,12 +29,12 @@ jobs:
         with:
           node-version: 20
           cache: 'pnpm'
-      - run: pnpm install
+      - run: cd packages/mobileui && pnpm install
       - name: Import Weapp Key
-        run: echo "$WEAPP_KEY" | base64 --decode > key/private.appid.key
+        run: echo "$WEAPP_KEY" | base64 --decode > packages/mobileui/key/private.appid.key
         env:
           WEAPP_KEY: ${{ env.WEAPP_KEY }}
       - name: Build Taro Playground Weapp
-        run: pnpm build:weapp -- --upload
+        run: cd packages/mobileui && pnpm build:weapp -- --upload
         env:
           WEAPP_ID: ${{ env.WEAPP_ID }}
