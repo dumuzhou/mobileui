@@ -28,7 +28,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 20
-          cache: 'pnpm'
+          #cache: 'pnpm'
       - run: cd packages/mobileui && pnpm install
       - name: Import Weapp Key
         run: echo "$WEAPP_KEY" | base64 --decode > packages/mobileui/key/private.appid.key
