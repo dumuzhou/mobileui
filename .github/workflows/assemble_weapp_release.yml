@@ -35,6 +35,6 @@ jobs:
         env:
           WEAPP_KEY: ${{ env.WEAPP_KEY }}
       - name: Build Taro Playground Weapp
-        run: cd packages/mobileui && pnpm build:weapp -- --upload
+        run: cd packages/mobileui && npm run build:weapp -- --upload
         env:
           WEAPP_ID: ${{ env.WEAPP_ID }}
