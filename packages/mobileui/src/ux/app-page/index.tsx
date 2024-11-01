@@ -1,6 +1,7 @@
 import Taro, { useRouter } from '@tarojs/taro';
 import { View, ScrollView, Text } from '@tarojs/components';
 import Provider from '../provider';
+import { NavBar } from '../index';
 import './index.less';
 
 const Index = (props: any) => {
@@ -8,14 +9,14 @@ const Index = (props: any) => {
   return (
     <Provider>
       <View className="m-app-page">
-        <View
-          className="m-app-page-header"
-          onClick={() => {
+        <NavBar
+          back="返回"
+          onBack={() => {
             Taro.navigateBack();
           }}
         >
-          <Text>{router.params.title || '返回'}</Text>
-        </View>
+          {router.params.title || '返回'}{' '}
+        </NavBar>
         <ScrollView className="m-app-page-body">
           {!!props.children && props.children}
         </ScrollView>

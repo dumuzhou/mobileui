@@ -16,5 +16,7 @@ export { default as Skeleton } from './skeleton';
 export { default as Selector } from './selector';
 export { default as Tag } from './tag';
 export { default as Steps } from './steps';
+export { default as NavBar } from './nav-bar';
+export { default as Icon } from './icon';
 
 export { default as useSize } from './hooks/useSize';

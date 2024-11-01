@@ -1,0 +1,79 @@
+@import '../theme/index.less';
+
+@class-prefix-nav-bar: ~'amu-nav-bar';
+.@{class-prefix-nav-bar} {
+  .flex2();
+  /* prettier-ignore */
+  height: 45Px;
+  position: relative;
+  overflow: hidden;
+  &-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    .flex();
+    /* prettier-ignore */
+    padding-left: 12Px;
+    /* prettier-ignore */
+    padding-right: 16Px;
+    &-ico {
+      /* prettier-ignore */
+      width: 24Px;
+      /* prettier-ignore */
+      height: 24Px;
+      /* prettier-ignore */
+      margin-right: 4Px;
+      overflow: hidden;
+      .center();
+    }
+    &-texts {
+      /* prettier-ignore */
+      margin-right: 6Px;
+    }
+    &-text {
+      /* prettier-ignore */
+      font-size: 18Px;
+      color: #333;
+    }
+  }
+  &-title {
+    flex-grow: 1;
+    box-sizing: border-box;
+    .center();
+    flex-direction: column;
+    &-texts {
+      .oneline();
+    }
+    &-text {
+      /* prettier-ignore */
+      font-size: 18Px;
+      color: #333;
+      .oneline();
+    }
+    &-text-sub {
+      /* prettier-ignore */
+      font-size: 12Px;
+      color: #333;
+    }
+  }
+  &-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding-right: 6px;
+    .flex();
+    &-ico {
+      width: 48px;
+      height: 48px;
+      margin-right: 8px;
+      overflow: hidden;
+    }
+    &-text {
+      /* prettier-ignore */
+      font-size: 15Px;
+      color: #333;
+    }
+  }
+}

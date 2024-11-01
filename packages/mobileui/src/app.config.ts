@@ -28,6 +28,8 @@ export default {
         'selector-demo1/index',
         'tag-demo1/index',
         'steps-demo1/index',
+        'nav-bar-demo1/index',
+        'icon-demo1/index',
       ],
       //"independent": true
     },
