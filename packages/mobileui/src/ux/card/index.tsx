@@ -2,10 +2,10 @@ import classnames from 'classnames';
 import { useContext, useMemo } from 'react';
 //import PropTypes, { InferProps } from 'prop-types';
 import React, { FC, ReactNode, useState, useEffect } from 'react';
-import { Button, Form, View, Text } from '@tarojs/components';
+import { Form, View, Text } from '@tarojs/components';
 import { ThemeContext } from '../theme';
 //import { LocaleContext } from '../local-provider';
-import { Divider } from '../index';
+import { Divider, Button } from '../index';
 
 import { NativeProps, withNativeProps } from '../utils/native-props';
 import Taro from '@tarojs/taro';

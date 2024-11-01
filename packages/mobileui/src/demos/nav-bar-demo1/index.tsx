@@ -7,7 +7,7 @@ const Index = () => {
   return (
     <AppPage>
       <View className="m-demo">
-        <DemoBlock title="基础用法" padding="0">
+        <DemoBlock title="基础用法" padding={0}>
           <NavBar
             onBack={() => {
               Taro.showToast({
@@ -21,7 +21,7 @@ const Index = () => {
           </NavBar>
         </DemoBlock>
 
-        <DemoBlock title="返回按钮显示文字" padding="0">
+        <DemoBlock title="返回按钮显示文字" padding={0}>
           <NavBar
             back={'返回'}
             onBack={() => {
@@ -36,7 +36,7 @@ const Index = () => {
           </NavBar>
         </DemoBlock>
 
-        <DemoBlock title="返回按钮不显示图标" padding="0">
+        <DemoBlock title="返回按钮不显示图标" padding={0}>
           <NavBar
             backArrow={false}
             back="返回"
@@ -51,7 +51,7 @@ const Index = () => {
             标题
           </NavBar>
         </DemoBlock>
-        <DemoBlock title="自定义返回图标" padding="0">
+        <DemoBlock title="自定义返回图标" padding={0}>
           <NavBar
             back="返回"
             onBack={() => {
@@ -66,7 +66,7 @@ const Index = () => {
           </NavBar>
         </DemoBlock>
 
-        <DemoBlock title="自定义左侧区域" padding="0">
+        <DemoBlock title="自定义左侧区域" padding={0}>
           <NavBar
             left="关闭"
             back="返回"
@@ -81,7 +81,7 @@ const Index = () => {
             标题
           </NavBar>
         </DemoBlock>
-        <DemoBlock title="自定义右侧区域" padding="0">
+        <DemoBlock title="自定义右侧区域" padding={0}>
           <NavBar
             onBack={() => {
               Taro.showToast({
@@ -95,7 +95,7 @@ const Index = () => {
             标题
           </NavBar>
         </DemoBlock>
-        <DemoBlock title="自定义高度及边框" padding="0">
+        <DemoBlock title="自定义高度及边框" padding={0}>
           <NavBar
             style={{
               height: 36,
@@ -115,7 +115,7 @@ const Index = () => {
             标题
           </NavBar>
         </DemoBlock>
-        <DemoBlock title="标题超长" padding="0">
+        <DemoBlock title="标题超长" padding={0}>
           <NavBar
             onBack={() => {
               Taro.showToast({
@@ -129,7 +129,7 @@ const Index = () => {
           </NavBar>
         </DemoBlock>
 
-        <DemoBlock title="显示副标题" padding="0">
+        <DemoBlock title="显示副标题" padding={0}>
           <NavBar
             back="返回"
             onBack={() => {

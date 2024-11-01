@@ -9,19 +9,19 @@ import './index.less';
 export type DemoBlockProps = {
   isFull?: boolean;
   title?: string;
-  padding?: string;
+  padding?: number;
   background?: string;
   children?: React.ReactNode;
 };
 const defaultProps: DemoBlockProps = {
   isFull: false,
   title: '示例',
-  padding: '1',
+  padding: 24,
   background: '#ffffff',
 };
 const TmButton = function (p: DemoBlockProps) {
   const props = { ...defaultProps, ...p };
-  const { isFull } = props;
+  const { isFull, padding } = props;
   return (
     <View className={`m-demo-block ${isFull ? 'm-demo-block-full' : ''}`}>
       {!isFull && (
@@ -30,12 +30,14 @@ const TmButton = function (p: DemoBlockProps) {
         </View>
       )}
       <View
-        className={`m-demo-block-item ${
-          (props.padding === '0' && 'm-demo-block-item-none',
-          isFull && 'm-demo-block-item-full')
-        }`}
+        className={classnames(
+          `m-demo-block-item`,
+
+          isFull && 'm-demo-block-item-full'
+        )}
         style={{
           backgroundColor: props.background,
+          padding,
         }}
       >
         {props.children}

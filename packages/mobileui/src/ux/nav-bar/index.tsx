@@ -4,6 +4,7 @@ import { Button as TaroButton, Form, View, Text } from '@tarojs/components';
 import { ButtonProps as ButtonPropsNative } from '@tarojs/components/types/Button';
 import Taro from '@tarojs/taro';
 import { NativeProps, withNativeProps } from '../utils/native-props';
+import { Icon } from '../index';
 import { ThemeContext } from '../theme';
 import navBarStyles from './style';
 //import Icon from '../icon';
@@ -30,7 +31,7 @@ const defaultProps: NavBarProps = {
 const NavBar = function (p: NavBarProps) {
   const [marginMax, setMarginMax] = useState(0);
   if (defaultProps.backArrow === undefined) {
-    //defaultProps.backArrow = <Icon name="left" size={24} />;
+    defaultProps.backArrow = <Icon />;
   }
   const props = { ...defaultProps, ...p };
   const { style, ...restProps } = props;
