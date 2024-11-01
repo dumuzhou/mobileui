@@ -1,6 +1,6 @@
-import { View, Button } from '@tarojs/components';
+import { View } from '@tarojs/components';
 import './index.less';
-import { AppPage, DemoBlock, Space } from '../../ux';
+import { Button, AppPage, DemoBlock, Space } from '../../ux';
 
 const Index = () => {
   return (

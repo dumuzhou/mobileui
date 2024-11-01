@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import React, { FC, useContext } from 'react';
+import React, { useContext } from 'react';
 import { View } from '@tarojs/components';
 import { ThemeContext } from '../theme';
 import { ThemeProps } from '../theme/default';
@@ -40,12 +40,10 @@ const Space = (p: SpaceProps) => {
     <View
       className={classnames(
         `${classPrefix}`,
-        align ? `${classPrefix}-align-${align}` : null,
-        {
-          [`${classPrefix}-vertical`]: direction === 'vertical',
-          [`${classPrefix}-wrap`]: wrap,
-        },
-        justify ? `${classPrefix}-justify-${justify}` : null
+        align && `${classPrefix}-align-${align}`,
+        direction === 'vertical' && `${classPrefix}-vertical`,
+        wrap && `${classPrefix}-wrap`,
+        justify && `${classPrefix}-justify-${justify}`
       )}
       {...restProps}
       style={{
