@@ -1,77 +1,13 @@
 @import '../theme/index.less';
 @class-prefix-button: ~'mbu-button';
 .@{class-prefix-button} {
-  &-wrap {
-    position: relative;
-    &-disabled {
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      z-index: 2;
-    }
-  }
-
-  box-sizing: border-box;
+  position: relative;
+  .center();
   /* #ifndef rn */
-  &::after {
-    opacity: 0;
-  }
-  &:focus {
-    outline: none;
-  }
-  &::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(
-      calc(var(--border-width) * -1),
-      calc(var(--border-width) * -1)
-    );
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    border: var(--border-width) var(--border-style) #000;
-    border-radius: var(--border-radius);
-    opacity: 0;
-    content: ' ';
-    box-sizing: content-box;
-  }
-  &:active::before {
-    opacity: 0.08;
-  }
+  box-sizing: border-box;
   /* #endif */
-  &-ico {
-    /* prettier-ignore */
-    margin-right: 8Px;
-    /* prettier-ignore */
-    overflow: hidden;
-    .center();
-    &-mini {
-      /* prettier-ignore */
-      height: 18Px;
-    }
-    &-small {
-      /* prettier-ignore */
-      height: 21Px;
-    }
-    &-middle {
-      /* prettier-ignore */
-      height: 24Px;
-    }
-    &-modal {
-      /* prettier-ignore */
-      height: 25Px;
-    }
-
-    &-large {
-      /* prettier-ignore */
-      height: 25Px;
-    }
-  }
-
   padding: 0;
+  margin: 0;
   height: auto;
   border-style: solid;
   /* prettier-ignore */
@@ -81,7 +17,7 @@
   /* prettier-ignore */
   padding-right: 12Px;
 
-  .center();
+  /* 按钮大小*/
   &-mini {
     /* prettier-ignore */
     padding-top: 3Px;
@@ -94,11 +30,18 @@
     /* prettier-ignore */
     padding-bottom: 3Px;
   }
+  /* 默认 */
   &-middle {
     /* prettier-ignore */
     padding-top: 8Px;
     /* prettier-ignore */
     padding-bottom: 8Px;
+  }
+  &-large {
+    /* prettier-ignore */
+    padding-top: 12Px;
+    /* prettier-ignore */
+    padding-bottom: 12Px;
   }
   &-modal {
     /* prettier-ignore */
@@ -107,16 +50,11 @@
     padding-bottom: 10Px;
   }
 
-  &-large {
-    /* prettier-ignore */
-    padding-top: 12Px;
-    /* prettier-ignore */
-    padding-bottom: 12Px;
-  }
-  position: relative;
   &-disabled {
     opacity: 0.6;
   }
+
+  /* 文字大小 */
   &-text {
     font-weight: normal;
     &-mini {
@@ -151,6 +89,8 @@
       line-height: 25Px;
     }
   }
+
+  /* 形状 */
   &-shape {
     &-default {
       /* prettier-ignore */
@@ -163,5 +103,9 @@
     &-rectangular {
       border-radius: 0;
     }
+  }
+
+  &-disabled {
+    opacity: 0.6;
   }
 }

@@ -1,42 +1,43 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
 import { ThemeProps } from '../theme/default';
+import type { CSSProperties } from 'react';
 
 export interface ButtonStyles {
-  solid_default: ViewStyle;
-  solid_primary: ViewStyle;
-  solid_success: ViewStyle;
-  solid_warning: ViewStyle;
-  solid_danger: ViewStyle;
-  solid_default_text: TextStyle;
-  solid_primary_text: TextStyle;
-  solid_success_text: TextStyle;
-  solid_warning_text: TextStyle;
-  solid_danger_text: TextStyle;
+  solid_default: CSSProperties;
+  solid_primary: CSSProperties;
+  solid_success: CSSProperties;
+  solid_warning: CSSProperties;
+  solid_danger: CSSProperties;
+  solid_default_text: CSSProperties;
+  solid_primary_text: CSSProperties;
+  solid_success_text: CSSProperties;
+  solid_warning_text: CSSProperties;
+  solid_danger_text: CSSProperties;
 
-  outline_default: ViewStyle;
-  outline_primary: ViewStyle;
-  outline_success: ViewStyle;
-  outline_warning: ViewStyle;
-  outline_danger: ViewStyle;
-  outline_default_text: TextStyle;
-  outline_primary_text: TextStyle;
-  outline_success_text: TextStyle;
-  outline_warning_text: TextStyle;
-  outline_danger_text: TextStyle;
+  outline_default: CSSProperties;
+  outline_primary: CSSProperties;
+  outline_success: CSSProperties;
+  outline_warning: CSSProperties;
+  outline_danger: CSSProperties;
+  outline_default_text: CSSProperties;
+  outline_primary_text: CSSProperties;
+  outline_success_text: CSSProperties;
+  outline_warning_text: CSSProperties;
+  outline_danger_text: CSSProperties;
 
-  none_default: ViewStyle;
-  none_primary: ViewStyle;
-  none_success: ViewStyle;
-  none_warning: ViewStyle;
-  none_danger: ViewStyle;
-  none_default_text: TextStyle;
-  none_primary_text: TextStyle;
-  none_success_text: TextStyle;
-  none_warning_text: TextStyle;
-  none_danger_text: TextStyle;
+  none_default: CSSProperties;
+  none_primary: CSSProperties;
+  none_success: CSSProperties;
+  none_warning: CSSProperties;
+  none_danger: CSSProperties;
+  none_default_text: CSSProperties;
+  none_primary_text: CSSProperties;
+  none_success_text: CSSProperties;
+  none_warning_text: CSSProperties;
+  none_danger_text: CSSProperties;
 }
+type TGetStyle = (theme: ThemeProps) => ButtonStyles;
 
-export default (theme: ThemeProps) => ({
+const fn: TGetStyle = (theme: ThemeProps) => ({
   // 颜色
   solid_default: {
     borderColor: theme.border,
@@ -151,3 +152,4 @@ export default (theme: ThemeProps) => ({
     color: theme.danger,
   },
 });
+export default fn;

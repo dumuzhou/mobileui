@@ -18,6 +18,16 @@ const Index = () => {
             <Button color="primary" fill="none">
               None
             </Button>
+            <Button color="danger" fill="solid" onClick={() => {}}>
+              Solid
+            </Button>
+            <Button color="danger" fill="outline">
+              Outline
+            </Button>
+
+            <Button color="danger" fill="none">
+              None
+            </Button>
           </Space>
         </DemoBlock>
         <DemoBlock title="块级按钮">
@@ -47,12 +57,6 @@ const Index = () => {
             <Button color="warning">warning</Button>
           </Space>
         </DemoBlock>
-        <DemoBlock title="自定义图标">
-          <Space>
-            <Button shape="default">搜索</Button>
-          </Space>
-        </DemoBlock>
-
         <DemoBlock title="形状">
           <Space wrap>
             <Button shape="default" color="primary">
@@ -64,37 +68,6 @@ const Index = () => {
             <Button shape="rectangular" color="primary">
               Rectangular Button
             </Button>
-          </Space>
-        </DemoBlock>
-        <DemoBlock title="加载状态">
-          <Space wrap align="center">
-            <Button shape="default" color="primary" loading>
-              正在加载
-            </Button>
-            <Button shape="default" color="primary" loading></Button>
-            <Button shape="default" color="primary" onClick={() => {}}>
-              Auto Loading
-            </Button>
-            <Button
-              shape="default"
-              size="mini"
-              color="primary"
-              loading
-            ></Button>
-
-            <Button
-              shape="default"
-              size="small"
-              color="primary"
-              loading
-            ></Button>
-
-            <Button
-              shape="default"
-              size="large"
-              color="primary"
-              loading
-            ></Button>
           </Space>
         </DemoBlock>
 

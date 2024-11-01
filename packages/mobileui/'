@@ -1,6 +1,12 @@
 import classnames from 'classnames';
-import { useContext } from 'react';
-import { View, Text } from '@tarojs/components';
+import React, { FC, ReactNode, useContext } from 'react';
+import {
+  ButtonProps as TaroButtonProps,
+  Button as TaroButton,
+  Form,
+  View,
+  Text,
+} from '@tarojs/components';
 
 import { NativeProps, withNativeProps } from '../utils/native-props';
 import { ButtonProps as ButtonPropsNative } from '@tarojs/components/types/Button';
@@ -8,6 +14,7 @@ import { ButtonProps as ButtonPropsNative } from '@tarojs/components/types/Butto
 import { ThemeContext } from '../theme';
 import buttonStyles from './style';
 
+//import { AmButtonProps, AmButtonState } from "../../../types/button";
 import './index.less';
 
 const classPrefix = `mbu-button`;
@@ -16,7 +23,6 @@ type NewProps = Pick<
   ButtonPropsNative,
   Exclude<keyof ButtonPropsNative, 'size'>
 >;
-
 export type ButtonProps = {
   color?: 'default' | 'primary' | 'success' | 'warning' | 'danger';
   disabled?: boolean;
@@ -69,7 +75,10 @@ const Button = function (p: ButtonProps) {
         `${classPrefix}`,
         props.size && `${classPrefix}-${props.size}`,
         props.shape && `${classPrefix}-shape-${props.shape}`,
-        props.disabled && `${classPrefix}-disabled`
+        props.disabled && `${classPrefix}-${props.disabled}`,
+        {
+          [`${classPrefix}-disabled`]: props.disabled,
+        }
       )}
       {...restProps}
     >
