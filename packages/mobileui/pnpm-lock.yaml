@@ -121,6 +121,12 @@ importers:
       '@wuba/react-native-echarts':
         specifier: 1.2.5
         version: 1.2.5(zeclefdx4wibaggngoo4rh7nbi)
+      babel-plugin-global-define:
+        specifier: ^1.0.3
+        version: 1.0.3
+      babel-plugin-transform-react-jsx-to-rn-stylesheet:
+        specifier: ^4.0.7
+        version: 4.0.7(@babel/core@7.23.7)
       classnames:
         specifier: ^2.5.1
         version: 2.5.1
@@ -223,6 +229,9 @@ importers:
       react-native-webview:
         specifier: ~13.6.4
         version: 13.6.4(react-native@0.73.1(@babel/core@7.23.7)(@babel/preset-env@7.23.7(@babel/core@7.23.7))(react@18.2.0))(react@18.2.0)
+      stylelint-config-taro-rn:
+        specifier: ^4.0.7
+        version: 4.0.7(stylelint-taro-rn@4.0.0-canary.9)(stylelint@9.3.0)
       taro-lottie:
         specifier: ^1.0.2
         version: 1.0.2(@tarojs/components@4.0.0-canary.9(@tarojs/helper@4.0.0-canary.9)(@tarojs/runtime@4.0.0-canary.9(@tarojs/shared@4.0.0-canary.9))(@tarojs/shared@4.0.0-canary.9)(@types/react@18.2.46)(postcss@8.4.32)(react@18.2.0)(rollup@3.29.4))(@tarojs/taro@4.0.0-canary.9(@tarojs/helper@4.0.0-canary.9)(@tarojs/runtime@4.0.0-canary.9(@tarojs/shared@4.0.0-canary.9))(@tarojs/shared@4.0.0-canary.9)(@types/react@18.2.46)(postcss@8.4.32)(rollup@3.29.4))(lottie-ios@4.3.4)(react-native@0.73.1(@babel/core@7.23.7)(@babel/preset-env@7.23.7(@babel/core@7.23.7))(react@18.2.0))(react@18.2.0)
@@ -4236,6 +4245,12 @@ packages:
   babel-plugin-transform-react-jsx-to-rn-stylesheet@4.0.0-canary.9:
     resolution: {integrity: sha512-ScMA8zBUbp+MiyBZepwlsLlLYLY8hPvPlBCTodPWgeTTnl3vhs32WqxnLDljO/CqUq4pM2m6WvWNVoA9ydsGsQ==}
     engines: {node: '>=12.0.0', npm: '>=6.0.0'}
+
+  babel-plugin-transform-react-jsx-to-rn-stylesheet@4.0.7:
+    resolution: {integrity: sha512-xBALO+mPUZRVcawxpd04UZ6Yqrxf+vva5siQtPyOOhxhF2vSNsczN88ObaYYAKTJZ8DDnUMWRGpgsN8BW2jT3g==}
+    engines: {node: '>= 18'}
+    peerDependencies:
+      '@babel/core': ^7.0.0
 
   babel-plugin-transform-regenerator@6.26.0:
     resolution: {integrity: sha512-LS+dBkUGlNR15/5WHKe/8Neawx663qttS6AGqoOUhICc9d1KciBvtrQSuc0PI+CxQ2Q/S1aKuJ+u64GtLdcEZg==}
@@ -10670,6 +10685,13 @@ packages:
   stylelint-config-taro-rn@4.0.0-canary.9:
     resolution: {integrity: sha512-PtIhCq+aBi5dXVcj8fOSGkNYvhVLCnZz8ojrJLwcjaOtD9tEuAB60bEUNkd6tSpWByi8+M4AU2uaLFmkmIWa0Q==}
 
+  stylelint-config-taro-rn@4.0.7:
+    resolution: {integrity: sha512-7uzAXLH9+jS62p5f7FbzWhCU30U66n7NZsKRLmdikGPsvWCrKvw5N1MH4r9JMTso6qtZdBPY0g7rbdD4OjEcdA==}
+    engines: {node: '>= 18'}
+    peerDependencies:
+      stylelint: ^16
+      stylelint-taro-rn: 4.0.7
+
   stylelint-taro-rn@4.0.0-canary.9:
     resolution: {integrity: sha512-2lzanIK/zFOU9VlpItooQfW8OXHjMD0nAjHNY/AcZWnSKrxmNM4Q7MtRVoT7cj6Boc5dtaEEWa/0vKUxKVzp1w==}
     engines: {node: '>=6'}
@@ -10793,6 +10815,10 @@ packages:
 
   taro-css-to-react-native@4.0.0-canary.9:
     resolution: {integrity: sha512-Q7XjUYi5tyYdo/rCGuBiDVgzqjSnXgkRBO6+6otRzf5GYfCzKN+mWv8mfZ+7hPVkRKENqjnmIIlzUAnJyzr6xQ==}
+
+  taro-css-to-react-native@4.0.7:
+    resolution: {integrity: sha512-azvDAR2Jbudpgv2ywGs359xWKm+1F92zCvweFiG8EnhElPaxFiwc5mxaLbTvYXfn1CBEn8A03AmG4pXKibjjrQ==}
+    engines: {node: '>= 18'}
 
   taro-lottie@1.0.2:
     resolution: {integrity: sha512-6xAmUX27hAJ6RevBHlWUeoiGADZATYg2OTHPStyEQHoseE1Wr59M/bNBzthns5CFJ2tQF4HCkJp7uGQNnTW26w==}
@@ -18512,6 +18538,12 @@ snapshots:
       camelize: 1.0.1
       taro-css-to-react-native: 4.0.0-canary.9
 
+  babel-plugin-transform-react-jsx-to-rn-stylesheet@4.0.7(@babel/core@7.23.7):
+    dependencies:
+      '@babel/core': 7.23.7
+      camelize: 1.0.1
+      taro-css-to-react-native: 4.0.7
+
   babel-plugin-transform-regenerator@6.26.0:
     dependencies:
       regenerator-transform: 0.10.1
@@ -24114,11 +24146,11 @@ snapshots:
     dependencies:
       postcss: 8.4.32
 
-  postcss-html@0.28.0(postcss-syntax@0.28.0(postcss@8.4.32))(postcss@6.0.23):
+  postcss-html@0.28.0(postcss-syntax@0.28.0)(postcss@6.0.23):
     dependencies:
       htmlparser2: 3.10.1
       postcss: 6.0.23
-      postcss-syntax: 0.28.0(postcss-html@0.28.0(postcss-syntax@0.28.0(postcss@8.4.32))(postcss@6.0.23))(postcss-less@2.0.0)(postcss-markdown@0.28.0(postcss-syntax@0.28.0(postcss@8.4.32))(postcss@6.0.23))(postcss-scss@1.0.6)(postcss@6.0.23)
+      postcss-syntax: 0.28.0(postcss@8.4.32)
 
   postcss-import@14.1.0(postcss@8.4.32):
     dependencies:
@@ -24155,10 +24187,10 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  postcss-markdown@0.28.0(postcss-syntax@0.28.0(postcss@8.4.32))(postcss@6.0.23):
+  postcss-markdown@0.28.0(postcss-syntax@0.28.0)(postcss@6.0.23):
     dependencies:
       postcss: 6.0.23
-      postcss-syntax: 0.28.0(postcss-html@0.28.0(postcss-syntax@0.28.0(postcss@8.4.32))(postcss@6.0.23))(postcss-less@2.0.0)(postcss-markdown@0.28.0(postcss-syntax@0.28.0(postcss@8.4.32))(postcss@6.0.23))(postcss-scss@1.0.6)(postcss@6.0.23)
+      postcss-syntax: 0.28.0(postcss@8.4.32)
       remark: 9.0.0
       unist-util-find-all-after: 1.0.5
 
@@ -24355,14 +24387,9 @@ snapshots:
       postcss-value-parser: 4.2.0
       svgo: 2.8.0
 
-  postcss-syntax@0.28.0(postcss-html@0.28.0(postcss-syntax@0.28.0(postcss@8.4.32))(postcss@6.0.23))(postcss-less@2.0.0)(postcss-markdown@0.28.0(postcss-syntax@0.28.0(postcss@8.4.32))(postcss@6.0.23))(postcss-scss@1.0.6)(postcss@6.0.23):
+  postcss-syntax@0.28.0(postcss@8.4.32):
     dependencies:
-      postcss: 6.0.23
-    optionalDependencies:
-      postcss-html: 0.28.0(postcss-syntax@0.28.0(postcss@8.4.32))(postcss@6.0.23)
-      postcss-less: 2.0.0
-      postcss-markdown: 0.28.0(postcss-syntax@0.28.0(postcss@8.4.32))(postcss@6.0.23)
-      postcss-scss: 1.0.6
+      postcss: 8.4.32
 
   postcss-unique-selectors@5.1.1(postcss@8.4.32):
     dependencies:
@@ -25920,6 +25947,11 @@ snapshots:
 
   stylelint-config-taro-rn@4.0.0-canary.9: {}
 
+  stylelint-config-taro-rn@4.0.7(stylelint-taro-rn@4.0.0-canary.9)(stylelint@9.3.0):
+    dependencies:
+      stylelint: 9.3.0
+      stylelint-taro-rn: 4.0.0-canary.9
+
   stylelint-taro-rn@4.0.0-canary.9:
     dependencies:
       react-native-known-styling-properties: 1.2.0
@@ -25992,9 +26024,9 @@ snapshots:
       normalize-selector: 0.2.0
       pify: 3.0.0
       postcss: 6.0.23
-      postcss-html: 0.28.0(postcss-syntax@0.28.0(postcss@8.4.32))(postcss@6.0.23)
+      postcss-html: 0.28.0(postcss-syntax@0.28.0)(postcss@6.0.23)
       postcss-less: 2.0.0
-      postcss-markdown: 0.28.0(postcss-syntax@0.28.0(postcss@8.4.32))(postcss@6.0.23)
+      postcss-markdown: 0.28.0(postcss-syntax@0.28.0)(postcss@6.0.23)
       postcss-media-query-parser: 0.2.3
       postcss-reporter: 5.0.0
       postcss-resolve-nested-selector: 0.1.1
@@ -26002,7 +26034,7 @@ snapshots:
       postcss-sass: 0.3.5
       postcss-scss: 1.0.6
       postcss-selector-parser: 3.1.2
-      postcss-syntax: 0.28.0(postcss-html@0.28.0(postcss-syntax@0.28.0(postcss@8.4.32))(postcss@6.0.23))(postcss-less@2.0.0)(postcss-markdown@0.28.0(postcss-syntax@0.28.0(postcss@8.4.32))(postcss@6.0.23))(postcss-scss@1.0.6)(postcss@6.0.23)
+      postcss-syntax: 0.28.0(postcss@8.4.32)
       postcss-value-parser: 3.3.1
       resolve-from: 4.0.0
       signal-exit: 3.0.7
@@ -26168,6 +26200,14 @@ snapshots:
       css-color-keywords: 1.0.0
       css-mediaquery: 0.1.2
       postcss-value-parser: 3.3.1
+
+  taro-css-to-react-native@4.0.7:
+    dependencies:
+      camelize: 1.0.1
+      css: 3.0.0
+      css-color-keywords: 1.0.0
+      css-mediaquery: 0.1.2
+      postcss-value-parser: 4.2.0
 
   taro-lottie@1.0.2(@tarojs/components@4.0.0-canary.9(@tarojs/helper@4.0.0-canary.9)(@tarojs/runtime@4.0.0-canary.9(@tarojs/shared@4.0.0-canary.9))(@tarojs/shared@4.0.0-canary.9)(@types/react@18.2.46)(postcss@8.4.32)(react@18.2.0)(rollup@3.29.4))(@tarojs/taro@4.0.0-canary.9(@tarojs/helper@4.0.0-canary.9)(@tarojs/runtime@4.0.0-canary.9(@tarojs/shared@4.0.0-canary.9))(@tarojs/shared@4.0.0-canary.9)(@types/react@18.2.46)(postcss@8.4.32)(rollup@3.29.4))(lottie-ios@4.3.4)(react-native@0.73.1(@babel/core@7.23.7)(@babel/preset-env@7.23.7(@babel/core@7.23.7))(react@18.2.0))(react@18.2.0):
     dependencies:

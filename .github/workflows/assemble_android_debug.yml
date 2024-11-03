@@ -44,10 +44,10 @@ jobs:
           java-version: '17'
       - uses: pnpm/action-setup@v2
         with:
-          version: 8
+          version: 9
       - uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: 18
             # cache: 'pnpm'
       - run: cd packages/mobileui && pnpm install
         #  - name: Cache Gradle
