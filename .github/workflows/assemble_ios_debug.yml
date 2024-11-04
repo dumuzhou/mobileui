@@ -26,7 +26,7 @@ env:
 
 jobs:
   assemble:
-    runs-on: macos-13-xlarge
+    runs-on: macos-14-arm64
     steps:
       - name: Checkout Project
         uses: actions/checkout@v2
