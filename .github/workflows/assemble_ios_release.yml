@@ -29,7 +29,7 @@ env:
 
 jobs:
   assemble:
-    runs-on: macos-13-arm64
+    runs-on: macos-14
     steps:
       - name: Get current date # 获取时间
         id: date
