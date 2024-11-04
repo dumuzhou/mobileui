@@ -80,8 +80,6 @@
     "@tarojs/taro": "4.0.0-canary.9",
     "@tarojs/taro-rn": "4.0.0-canary.9",
     "@wuba/react-native-echarts": "1.2.5",
-    "babel-plugin-global-define": "^1.0.3",
-    "babel-plugin-transform-react-jsx-to-rn-stylesheet": "^4.0.7",
     "classnames": "^2.5.1",
     "d3-hierarchy": "^3.1.2",
     "echarts": "^5.4.1",
@@ -116,7 +114,6 @@
     "react-native-splash-screen": "^3.2.0",
     "react-native-svg": "~14.1.0",
     "react-native-webview": "~13.6.4",
-    "stylelint-config-taro-rn": "^4.0.7",
     "taro-lottie": "^1.0.2",
     "terser": "^5.4.0"
   },
