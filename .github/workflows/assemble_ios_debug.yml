@@ -93,7 +93,7 @@ jobs:
         with:
           prerelease: ${{ contains(github.ref, 'beta') }}
           files: |
-            ios/app-${{ env.BUILD_TYPE }}.ipa
-            ios/app-${{ env.BUILD_TYPE }}.app.dSYM.zip
+            packages/mobileui/ios/app-${{ env.BUILD_TYPE }}.ipa
+            packages/mobileui/ios/app-${{ env.BUILD_TYPE }}.app.dSYM.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
