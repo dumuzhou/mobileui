@@ -2,6 +2,11 @@
 
 set -euo pipefail
 
+# 删除旧的证书
+if [ -f ~/Library/Keychains/build.keychain ]; then
+    rm ~/Library/Keychains/build.keychain
+fi
+
 security create-keychain -p "" build.keychain
 security list-keychains -s build.keychain
 security default-keychain -s build.keychain
