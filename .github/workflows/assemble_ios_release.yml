@@ -48,7 +48,7 @@ jobs:
       - run: cd packages/mobileui && pnpm install
 
       - name: Cache Pods # 缓存
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: packages/mobileui/ios/Pods
           key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
