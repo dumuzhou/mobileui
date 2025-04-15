@@ -69,7 +69,7 @@ jobs:
           KEYSTORE_FILE: ${{ github.workspace }}/packages/mobileui/android/app/${{ env.KEYSTORE_FILE }}
           NODE_PATH: ${{ github.workspace }}/packages/mobileui/node_modules/.pnpm/node_modules:$NODE_PATH
       - name: Upload Android Products
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: app-${{ env.BUILD_TYPE }}
           path: ${{ github.workspace }}/packages/mobileui/android/app/build/outputs/apk/${{ env.BUILD_TYPE }}/app-${{ env.BUILD_TYPE }}.apk
