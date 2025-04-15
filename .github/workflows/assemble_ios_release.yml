@@ -83,6 +83,7 @@ jobs:
           FASTLANE_TEAM_ID: ${{ env.TEAM_ID }}
           NODE_PATH: ${{ github.workspace }}/packages/mobileui/node_modules/.pnpm/node_modules:$NODE_PATH
         run: |
+          sudo xcode-select -s /Applications/Xcode_14.3.app
           cd packages/mobileui/ios
           bundle update
           bundle exec fastlane build_release
