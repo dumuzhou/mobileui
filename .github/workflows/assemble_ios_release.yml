@@ -45,7 +45,7 @@ jobs:
           node-version: 20
           # cache: 'pnpm'
           scope: 'mobileui'
-      - run: cd packages/mobileui && npm install -g yarn && yarn install
+      - run: cd packages/mobileui && pnpm install
 
       - name: Cache Pods # 缓存
         uses: actions/cache@v3
