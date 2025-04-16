@@ -22,6 +22,7 @@
 		698DFA562840E30A0062591D /* RNDevManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 698DFA552840E30A0062591D /* RNDevManager.m */; };
 		7699B88040F8A987B510C191 /* libPods-taroDemo-taroDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-taroDemo-taroDemoTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		85538F09F5DBD2DFE4C62289 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = F96B79BF94DDE8F75E3A2B7F /* PrivacyInfo.xcprivacy */; };
 		8C4AA5AC5743488E9EDBB2DB /* Outfit-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78938175DBBA4D3AAF17A871 /* Outfit-Black.ttf */; };
 		A07AF11BD6EF424B82AF7EAD /* Outfit-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80F31FE5CAF64346AC487535 /* Outfit-VariableFont_wght.ttf */; };
 		A6F8A009D6E94E829CB0DC50 /* Outfit-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1E36F0FD3E04D11B5B2AE60 /* Outfit-Bold.ttf */; };
@@ -71,6 +72,7 @@
 		B10D79FE8D68460E821FF9EF /* Outfit-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-ExtraLight.ttf"; path = "../assets/fonts/Outfit-ExtraLight.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED392737ABFDE2508D91B66F /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-taroDemo/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		F96B79BF94DDE8F75E3A2B7F /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = taroDemo/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				F96B79BF94DDE8F75E3A2B7F /* PrivacyInfo.xcprivacy */,
 			);
 			name = taroDemo;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				C4990DC4F4F74AC9939F3946 /* Outfit-SemiBold.ttf in Resources */,
 				3367DC93ED6D45E7A87BF1F2 /* Outfit-Thin.ttf in Resources */,
 				A07AF11BD6EF424B82AF7EAD /* Outfit-VariableFont_wght.ttf in Resources */,
+				85538F09F5DBD2DFE4C62289 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,7 +604,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UVRDSF5DKW;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = taroDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
@@ -630,9 +634,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UVRDSF5DKW;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = taroDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -723,11 +727,7 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-Wl",
-					"-ld_classic",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
@@ -799,11 +799,7 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-Wl",
-					"-ld_classic",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
