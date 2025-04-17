@@ -63,8 +63,8 @@ jobs:
         run: |
           sudo apt install -y ruby-bundler
           cd packages/mobileui/android
-          bundle install
-          bundle exec fastlane assemble
+          sudo bundle install
+          sudo bundle exec fastlane assemble
         env:
           KEYSTORE_FILE: ${{ github.workspace }}/packages/mobileui/android/app/${{ env.KEYSTORE_FILE }}
           NODE_PATH: ${{ github.workspace }}/packages/mobileui/node_modules/.pnpm/node_modules:$NODE_PATH
