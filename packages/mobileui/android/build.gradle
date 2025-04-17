@@ -6,6 +6,10 @@ buildscript {
         targetSdkVersion = 34
         ndkVersion = "25.1.8937393"
         kotlinVersion = "1.8.0"
+        
+        // 添加 namespace 支持
+        androidXAnnotation = "1.6.0"
+        androidXBrowser = "1.5.0"
     }
     repositories {
         maven { url 'https://maven.aliyun.com/repository/public' }

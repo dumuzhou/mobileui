@@ -1,0 +1,39 @@
+diff --git a/node_modules/expo-camera/android/src/main/java/expo/modules/camera/ExpoCameraView.kt b/node_modules/expo-camera/android/src/main/java/expo/modules/camera/ExpoCameraView.kt
+index 1234567..abcdef0 100644
+--- a/node_modules/expo-camera/android/src/main/java/expo/modules/camera/ExpoCameraView.kt
++++ b/node_modules/expo-camera/android/src/main/java/expo/modules/camera/ExpoCameraView.kt
+@@ -276,7 +276,7 @@ class ExpoCameraView(
+   }
+ 
+   fun onBarCodeScanned(barCode: BarCodeScannerResult) {
+-    if (barCode.cornerPoints.isNotEmpty() && barCode.cornerPoints[0].raw != null) {
++    if (barCode.cornerPoints.isNotEmpty() && barCode.cornerPoints[0] != null) {
+       val cornerPoints = Arguments.createArray()
+       for (point in barCode.cornerPoints) {
+         val pointMap = Arguments.createMap()
+diff --git a/node_modules/expo-camera/android/src/main/java/expo/modules/camera/next/ExpoCameraView.kt b/node_modules/expo-camera/android/src/main/java/expo/modules/camera/next/ExpoCameraView.kt
+index 1234567..abcdef0 100644
+--- a/node_modules/expo-camera/android/src/main/java/expo/modules/camera/next/ExpoCameraView.kt
++++ b/node_modules/expo-camera/android/src/main/java/expo/modules/camera/next/ExpoCameraView.kt
+@@ -421,7 +421,7 @@ class ExpoCameraView(
+   }
+ 
+   fun onBarCodeScanned(barCode: BarCodeScannerResult) {
+-    if (barCode.cornerPoints.isNotEmpty() && barCode.cornerPoints[0].raw != null) {
++    if (barCode.cornerPoints.isNotEmpty() && barCode.cornerPoints[0] != null) {
+       val cornerPoints = Arguments.createArray()
+       for (point in barCode.cornerPoints) {
+         val pointMap = Arguments.createMap()
+diff --git a/node_modules/expo-camera/android/src/main/java/expo/modules/camera/next/analyzers/BarcodeAnalyzer.kt b/node_modules/expo-camera/android/src/main/java/expo/modules/camera/next/analyzers/BarcodeAnalyzer.kt
+index 1234567..abcdef0 100644
+--- a/node_modules/expo-camera/android/src/main/java/expo/modules/camera/next/analyzers/BarcodeAnalyzer.kt
++++ b/node_modules/expo-camera/android/src/main/java/expo/modules/camera/next/analyzers/BarcodeAnalyzer.kt
+@@ -51,7 +51,7 @@ class BarcodeAnalyzer(
+         val cornerPoints = barcode.cornerPoints ?: emptyArray()
+         val cornerPointsList = cornerPoints.toList()
+ 
+-        val result = BarCodeScannerResult(barcode.format, barcode.rawValue, cornerPointsList, barcode.valueType, barcode.displayValue)
++        val result = BarCodeScannerResult(barcode.format, barcode.rawValue ?: "", listOf(barcode.valueType), barcode.valueType, 0)
+         barCodeScannerResultListener?.onBarCodeScanned(result)
+       }
+     }

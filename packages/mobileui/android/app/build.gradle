@@ -114,6 +114,10 @@ dependencies {
     implementation("com.facebook.react:react-android")
     implementation 'com.facebook.fresco:animated-gif:2.5.0'
 
+    // 添加 AndroidX 依赖
+    implementation "androidx.annotation:annotation:${rootProject.ext.androidXAnnotation}"
+    implementation "androidx.browser:browser:${rootProject.ext.androidXBrowser}"
+
     implementation("com.facebook.react:flipper-integration")
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")

@@ -55,6 +55,29 @@ jobs:
           #cache: 'pnpm'
       # 安装项目依赖
       - run: cd packages/mobileui && npm install -g yarn && yarn install
+      
+      # 安装 patch-package
+      - name: Install patch-package
+        run: |
+          cd packages/mobileui
+          yarn add patch-package postinstall-postinstall --dev
+      
+      # 修复 expo-barcode-scanner 和 expo-camera 模块
+      - name: Fix Expo modules
+        run: |
+          cd packages/mobileui
+          # 降级 expo-barcode-scanner 和 expo-camera 到兼容版本
+          yarn add expo-barcode-scanner@~12.5.3 expo-camera@~13.4.4 --exact
+          # 应用补丁
+          yarn patch-package
+      
+      # 修复 AndroidManifest.xml 中的 package 属性问题
+      - name: Fix AndroidManifest.xml package attributes
+        run: |
+          cd packages/mobileui
+          chmod +x ./scripts/fix-android-manifest.sh
+          ./scripts/fix-android-manifest.sh
+      
       # Gradle缓存配置（已注释）
       #- name: Cache Gradle
         #uses: actions/cache@v2
