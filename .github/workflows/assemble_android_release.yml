@@ -63,7 +63,7 @@ jobs:
         run: |
           sudo apt install -y ruby-bundler
           cd packages/mobileui/android
-          bundle update
+          bundle install
           bundle exec fastlane assemble
         env:
           KEYSTORE_FILE: ${{ github.workspace }}/packages/mobileui/android/app/${{ env.KEYSTORE_FILE }}
