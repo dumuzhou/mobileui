@@ -38,7 +38,7 @@ platform :android do
     
     # 确保APP_ID不为空，提供默认值
     app_id = ENV['APP_ID'].to_s
-    app_id = "com.tarodemo" if app_id.empty?
+    app_id = "com.setmp.cake" if app_id.empty?
     
     # 确保VERSION_CODE是整数
     version_code = ENV['VERSION_CODE'].to_s
