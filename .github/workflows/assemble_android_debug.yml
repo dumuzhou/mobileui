@@ -50,6 +50,13 @@ jobs:
           node-version: 18
             # cache: 'pnpm'
       - run: cd packages/mobileui && pnpm install
+
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
         #  - name: Cache Gradle
         #uses: actions/cache@v2
         #env:
@@ -59,9 +66,9 @@ jobs:
         # key: ${{ runner.os }}-gradle
         # restore-keys: |
             #     ${{ runner.os }}-gradle
+        #sudo apt install -y ruby-bundler
       - name: Assemble Android ${{ env.BUILD_TYPE }}
         run: |
-          sudo apt install -y ruby-bundler
           cd packages/mobileui/android
           bundle update
           bundle exec fastlane assemble
