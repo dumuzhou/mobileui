@@ -19,23 +19,12 @@ platform :android do
 
   desc "assemble"
   lane :assemble do
-    # 只有当APP_NAME存在且不为空时才执行update_android_strings
-    unless ENV['APP_NAME'].nil? || ENV['APP_NAME'].empty?
-      app_name = ENV['APP_NAME'].to_s
-      
-      begin
-        update_android_strings(
-          xml_path: 'app/src/main/res/values/strings.xml',
-          block: lambda { |strings|
-            strings['app_name'] = app_name
-          }
-        )
-      rescue => e
-        UI.important("更新应用名称时出错: #{e.message}")
-        # 继续执行，不中断构建过程
-      end
-    end
-    
+    update_android_strings(
+      xml_path: 'app/src/main/res/values/strings.xml',
+      block: lambda { |strings|
+        strings['app_name'] = ENV['APP_NAME']
+      }
+    )
     gradle(
       task: "assemble",
       build_type: ENV['BUILD_TYPE'],
